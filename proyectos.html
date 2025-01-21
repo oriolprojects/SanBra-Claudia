@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diseñadora de Moda - Portfolio</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlace a tu archivo CSS -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap');
+	</style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Para el carrusel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> <!-- Carrusel de Bootstrap -->
+</head>
+
+<body>
+	<div class="body-proy">
+		<div class="name-titulo">
+			<div style="text-align: center; color: black">
+				<h1 class="special-elite-regular"><a class="special-elite-aa" href="index.html">CLÀUDIA SÁNCHEZ BRANCÓS</a></h1>
+			</div>
+		</div>
+		
+		<!-- Navbar -->
+		<nav class="navegacion">
+			<ul>
+				<li><a class="special-elite-aa" href="proyectos.html">Proyectos</a></li>
+				<li><a class="special-elite-aa" href="about.html">Sobre mí</a></li>
+				<li><a class="special-elite-aa" href="contact.html">Contacto</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="proyectos-list">
+		<ul>
+			<li><a class="proyectos-element" href="proyectos\corbiere.html">La Corbière</a></li>
+			<li><a class="proyectos-element" href="proyectos\img-personal.html">Imaginario Personal</a></li>
+			<li><a class="proyectos-element" href="proyectos\triadische.html">Triadische Collection</a></li>
+		</ul>
+	</div>
+	
+	<footer>
+		<p>&copy; 2025 [SanBra]. Todos los derechos reservados.</p>
+	</footer>
+
+	<!-- Script para el carrusel -->
+    <script>
+        let index = 0; // Índice para llevar el control de la imagen visible
+        const totalSlides = document.querySelectorAll('.slider-item').length;
+        const sliderContainer = document.querySelector('.slider-container');
+
+        // Cambiar a la siguiente imagen
+        function nextSlide() {
+            index = (index + 1) % totalSlides; // Aumenta el índice y hace el ciclo
+            updateSlider();
+        }
+
+        // Cambiar a la imagen anterior
+        function prevSlide() {
+            index = (index - 1 + totalSlides) % totalSlides; // Decrementa el índice y hace el ciclo
+            updateSlider();
+        }
+
+        // Actualizar la posición del carrusel
+        function updateSlider() {
+            sliderContainer.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        // Opcional: si quieres que cambie automáticamente cada 3 segundos
+        setInterval(nextSlide, 3000); 
+    </script>
+</body>
+
+</html>
